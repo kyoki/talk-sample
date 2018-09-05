@@ -36,6 +36,8 @@ class Tests(unittest.TestCase):
     def setUp(self):
         self.tracker = Tracker()
 
+    def test_allocate(self):
+        self.assertEqual(self.tracker.allocate('apibox'), 'apibox1')
 
 if __name__ == '__main__':
     unittest.main()
