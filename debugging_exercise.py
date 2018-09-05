@@ -1,3 +1,28 @@
+"""
+
+The Tracker class is used to allocate servers. You should be able to
+allocate new servers and deallocate existing servers. When allocating
+servers, it should return the next available lowest number that has
+not yet been allocted, starting with 1:
+
+example:
+tracker = Tracker()
+print tracker.allocate('apibox') => 'apibox1'
+print tracker.allocate('apibox') => 'apibox2'
+
+Each host type should start over from 1, regardless of what other
+boxes have been allocated:
+
+print tracker.allocate('sitebox') => 'sitebox1'
+print tracker.allocate('apibox') => 'apibox3'
+
+Deallocating a server should make that number available again:
+tracker.deallocate('apibox2')
+print tracker.allocate('apibox') => 'apibox2'
+print tracker.allocate('apibox') => 'apibox4'
+
+"""
+
 from collections import defaultdict
 import re
 import unittest
